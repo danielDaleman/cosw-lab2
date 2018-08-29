@@ -1,19 +1,15 @@
 import React from 'react';
-import {Todo} from './Todo'
+import {Todo} from './Todo';
 
 export class TodoList extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }	
-	
+    
     render() {				
-		
-		const todos = this.props.list;
-		const listTodo = todos.map((todo)=>
-			<Todo text={todo.text} priority={todo.priority} dueDate={todo.dueDate}/>
+		const todos = this.props.items;
+		const listTodo = todos.map((todo)=>			
+			<li key={todo.id}>{'TEXT = ' + todo.text + ' PRIORITY= ' + todo.priority + ' DATE= ' + todo.dueDate}</li>        
+			//<Todo text={todo.text} priority={todo.priority} dueDate={todo.dueDate}/>
+			
 		);
-		
         return (  
 			<ul>{listTodo}</ul>		  
         );
